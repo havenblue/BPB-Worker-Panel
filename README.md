@@ -13,9 +13,6 @@ This project is dedicated to developing a user panel for the [Cloudflare-workers
 - **Pages** deployment
 <br>
 
-🌟 If you found **BPB Panel** valuable, Your donations make all the difference 🌟
-- **USDT (BEP20):** `0x111EFF917E7cf4b0BfC99Edffd8F1AbC2b23d158`
-
 ## Features
 
 1. **Free**: No cost involved.
