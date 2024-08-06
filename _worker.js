@@ -804,12 +804,12 @@ const getNormalConfigs = async (env, hostName, client) => {
     }
 
     const { cleanIPs, proxyIP, ports } = proxySettings;
-    const resolved = await resolveDNS(hostName);
+//    const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         'www.speedtest.net',
-        ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+//        ...resolved.ipv4,
+//        ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(',') : [])
     ];
 
@@ -1042,12 +1042,12 @@ const getFragmentConfigs = async (env, hostName, client) => {
         ports
     } = proxySettings;
 
-    const resolved = await resolveDNS(hostName);
+ //   const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         "www.speedtest.net",
-        ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+//        ...resolved.ipv4,
+//        ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
     ];
 
@@ -1219,12 +1219,12 @@ const getSingboxConfig = async (env, hostName) => {
     let config = structuredClone(singboxConfigTemp);
     config.dns.servers[0].address = remoteDNS;
     config.dns.servers[1].address = localDNS;
-    const resolved = await resolveDNS(hostName);
+//    const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         "www.speedtest.net",
-        ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+//        ...resolved.ipv4,
+//        ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
     ];
 
