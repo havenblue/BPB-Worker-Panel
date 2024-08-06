@@ -804,12 +804,12 @@ const getNormalConfigs = async (env, hostName, client) => {
     }
 
     const { cleanIPs, proxyIP, ports } = proxySettings;
-//    const resolved = await resolveDNS(hostName);
+    const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         'www.speedtest.net',
-//        ...resolved.ipv4,
-//        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        ...resolved.ipv4,
+        ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(',') : [])
     ];
 
@@ -840,16 +840,16 @@ const generateRemark = (index, port) => {
     switch (index) {
         case 0:
         case 1:
-            remark = `💦 BPB - Domain_${index + 1} : ${port}`;
-            break;
+//            remark = `💦 BPB - Domain_${index + 1} : ${port}`;
+//            break;
         case 2:
         case 3:
-            remark = `💦 BPB - IPv4_${index - 1} : ${port}`;
-            break;
+//            remark = `💦 BPB - IPv4_${index - 1} : ${port}`;
+//            break;
         case 4:
         case 5:
-            remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
-            break;
+//            remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
+//            break;
         default:
             remark = `💦 BPB - Clean IP_${index - 5} : ${port}`;
             break;
@@ -1042,12 +1042,12 @@ const getFragmentConfigs = async (env, hostName, client) => {
         ports
     } = proxySettings;
 
- //   const resolved = await resolveDNS(hostName);
+    const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         "www.speedtest.net",
-//        ...resolved.ipv4,
-//        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        ...resolved.ipv4,
+        ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
     ];
 
@@ -1219,12 +1219,12 @@ const getSingboxConfig = async (env, hostName) => {
     let config = structuredClone(singboxConfigTemp);
     config.dns.servers[0].address = remoteDNS;
     config.dns.servers[1].address = localDNS;
-//    const resolved = await resolveDNS(hostName);
+    const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         "www.speedtest.net",
-//        ...resolved.ipv4,
-//        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        ...resolved.ipv4,
+        ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
     ];
 
